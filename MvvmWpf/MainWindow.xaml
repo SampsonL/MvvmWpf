@@ -1,0 +1,165 @@
+﻿<Window x:Class="MvvmWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvmWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800"
+        KeyDown="Border_TextBlock_KeyDown">
+    <Window.Resources>
+        <Storyboard x:Key="TextBlockAlarmOccurredBackGroundBlinkAnimation">
+            <ColorAnimation Storyboard.TargetName="TextBlock_AlarmOccurred" Storyboard.TargetProperty="Background.Color"
+                        From="White" To="Green" Duration="0:0:0.5" RepeatBehavior="Forever" AutoReverse="True"/>
+        </Storyboard>
+        <Storyboard x:Key="TextBlockRecipeCheckFailedOccurredBackGroundBlinkAnimation">
+            <ColorAnimation Storyboard.TargetName="TextBlock_RecipeCheckFailedOccurred" Storyboard.TargetProperty="Background.Color"
+                        From="White" To="Red" Duration="0:0:0.5" RepeatBehavior="Forever" AutoReverse="True" />
+        </Storyboard>
+        <Storyboard x:Key="TextBlock_CurrentRunningRecipeBackGroundBlinkAnimation">
+            <ColorAnimation Storyboard.TargetName="TextBlock_CurrentRunningRecipeBackGroundBlinkAnimation" Storyboard.TargetProperty="Background.Color"
+                        From="White" To="DeepPink" Duration="0:0:0.5" RepeatBehavior="Forever" AutoReverse="True"/>
+        </Storyboard>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--第一行-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="0.8*" />
+                <ColumnDefinition Width="1.2*" />
+            </Grid.ColumnDefinitions>
+            <Border  BorderBrush="Black" BorderThickness="1" Margin="10,1,1,1">
+                <Button Background="White" FontSize="10" FontWeight="Bold" Command="{Binding ChangeCommand}">
+                    <Button.Content>
+                        <Viewbox>
+                            <ContentPresenter Content="{Binding CommnicationStatus}" Margin="4"/>
+                        </Viewbox>
+                    </Button.Content>
+                </Button>
+            </Border>
+            <!--第2列-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Margin="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="1,1,1,1">
+                            <Viewbox Margin="5">
+                                <TextBlock Background="{Binding Background}" Text="{Binding TimeContext}" TextAlignment="Center" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Viewbox>
+                        </Border>
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="1">
+                            <TextBlock Text="{Binding ElementName=frame, Path=Source}" FontSize="10" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="1">
+                            <TextBlock Text="{Binding ViewTextBlock}" FontSize="10" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <Border Grid.Column="3" BorderBrush="Black" BorderThickness="1" Margin="1">
+                            <TextBlock Text="Login User" FontSize="10" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <!--第二行-->
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="1">
+                    <TextBlock Text="message Area" VerticalAlignment="Center" FontSize="10" FontWeight="Bold"/>
+                </Border>
+            </Grid>
+            <!--第三列-->
+            <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="1">
+                <TextBlock Text="Alarm" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" FontWeight="Bold"/>
+            </Border>
+            <!--第四列-->
+            <Border x:Name="Border_TextBlock"  Grid.Column="3"  BorderBrush="Black" BorderThickness="1" Margin="1,1,5,1" >
+                <TextBlock x:Name="TextBlock_AlarmOccurred" Text="Light Tower Display" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="13.2,39.2,13.2,0" FontSize="10" FontWeight="Bold"/>
+            </Border>
+        </Grid>
+        <!--第二行-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Column="0" x:Name="frame" Source="{Binding Page}" Margin="10 10 5 5" NavigationUIVisibility="Hidden">
+
+            </Frame>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Content="" Grid.Column="1" Grid.Row="1" />
+                <Button Content="" Grid.Column="1" Grid.Row="3" />
+                <Button Content="" Grid.Column="1" Grid.Row="5" />
+                <Button Content="" Grid.Column="1" Grid.Row="7" />
+                <Button Content="" Grid.Column="1" Grid.Row="9" />
+                <Button Content="" Grid.Column="1" Grid.Row="11" />
+                <Button Content="" Grid.Column="1" Grid.Row="13" />
+            </Grid>
+        </Grid>
+        <!--第三行-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Content="Jobs" Grid.Column="1" Grid.Row="1" Command="{Binding JobsCommand}"/>
+            <Button Content="System" Grid.Column="3" Grid.Row="1" Command="{Binding SystemCommand}"/>
+            <Button Content="" Grid.Column="5" Grid.Row="1" />
+            <Button Content="" Grid.Column="7" Grid.Row="1" />
+            <Button Content="" Grid.Column="9" Grid.Row="1" />
+            <Button Content="" Grid.Column="11" Grid.Row="1" />
+            <Button Content="" Grid.Column="13" Grid.Row="1" />
+        </Grid>
+    </Grid>
+</Window>
