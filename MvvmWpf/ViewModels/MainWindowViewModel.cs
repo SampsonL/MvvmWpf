@@ -76,7 +76,6 @@ namespace MvvmWpf.ViewModels
             }
         }
         private string viewTextBlock;
-
         public string ViewTextBlock
         {
             get { return viewTextBlock; }
@@ -119,12 +118,12 @@ namespace MvvmWpf.ViewModels
         public void Systen(object parameter)
         {
             this.Page = "Views/page2.xaml";
-            this.ViewTextBlock = Page;
+            this.ViewTextBlock = "System";
         }
         public void Job(object parameter)
         {
             this.Page = "Views/page1.xaml";
-            this.ViewTextBlock = Page;
+            this.ViewTextBlock = "Jobs";
         }
 
         
@@ -144,11 +143,6 @@ namespace MvvmWpf.ViewModels
             ShowTimer.Interval = new TimeSpan(0, 0, 0, 1);
             ShowTimer.Start();
             NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
-            
-            
-            //  PreviewKeyDown += Window_KeyDown;
-            //  UIElement.KeyDown += new KeyEventHandler();
-            
 
         }
 

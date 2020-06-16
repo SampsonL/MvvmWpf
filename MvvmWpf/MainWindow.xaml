@@ -20,11 +20,13 @@
             <ColorAnimation Storyboard.TargetName="TextBlock_CurrentRunningRecipeBackGroundBlinkAnimation" Storyboard.TargetProperty="Background.Color"
                         From="White" To="DeepPink" Duration="0:0:0.5" RepeatBehavior="Forever" AutoReverse="True"/>
         </Storyboard>
+        
     </Window.Resources>
+    
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="1.2*" />
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="9*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <!--第一行-->
@@ -59,7 +61,7 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="1,1,1,1">
-                            <Viewbox Margin="5">
+                            <Viewbox Margin="1">
                                 <TextBlock Background="{Binding Background}" Text="{Binding TimeContext}" TextAlignment="Center" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Viewbox>
                         </Border>
@@ -85,7 +87,7 @@
             </Border>
             <!--第四列-->
             <Border x:Name="Border_TextBlock"  Grid.Column="3"  BorderBrush="Black" BorderThickness="1" Margin="1,1,5,1" >
-                <TextBlock x:Name="TextBlock_AlarmOccurred" Text="Light Tower Display" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="13.2,39.2,13.2,0" FontSize="10" FontWeight="Bold"/>
+                <TextBlock x:Name="TextBlock_AlarmOccurred" Text="Light Tower Display" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="1" FontSize="10" FontWeight="Bold"/>
             </Border>
         </Grid>
         <!--第二行-->
@@ -133,19 +135,19 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="10*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="10*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="10*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="10*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="10*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="10*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="10*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
