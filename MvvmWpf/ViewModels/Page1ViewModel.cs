@@ -118,7 +118,7 @@ namespace MvvmWpf.ViewModels
             Users.Add(userInfo9);
             Users.Add(userInfo10);
 
-            Users = dataUser.GetAll();
+        //    Users = dataUser.GetAll();
 
 
 
