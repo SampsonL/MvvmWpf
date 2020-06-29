@@ -87,7 +87,6 @@ namespace MvvmWpf.ViewModels
         }
 
 
-
         //命令属性
 
         public DelegateCommand JobsCommand { get; set; }
@@ -169,7 +168,6 @@ namespace MvvmWpf.ViewModels
             {
                 Dispatcher.CurrentDispatcher.Invoke(new Action(() =>
                 {
-
                     this.CommnicationStatus = "Offline";
                     this.OnlineBackGround = "Red";
                 }));
