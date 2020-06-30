@@ -43,9 +43,9 @@ namespace MvvmWpf.Domain.Repositories
             {
                 try
                 {
-              //      return (session.CreateCriteria(typeof(UserInfo)).List<UserInfo>());
-                    ICollection<UserInfo> users = session.CreateCriteria(typeof(UserInfo)).List<UserInfo>();
-                    return users;
+                    return session.CreateCriteria(typeof(UserInfo)).List<UserInfo>();
+                  //  ICollection<UserInfo> users = session.CreateCriteria(typeof(UserInfo)).List<UserInfo>();
+                //    return users;
                 }
                 catch (ADOException exception)
                 {

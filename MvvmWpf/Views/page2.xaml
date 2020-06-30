@@ -5,10 +5,79 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MvvmWpf.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="450"
       Title="page2">
 
     <Grid>
-        
+        <TabControl FontSize="20">
+            <TabItem Header="仓库概况" Padding="20 5 20 5">
+                <Border Margin="30" BorderBrush="DarkCyan" BorderThickness="1">
+                    <TextBlock Text="已扫描物料或容器列表，Excel格式" />
+
+                </Border>
+            </TabItem>
+            <TabItem Header="查询" Padding="20 5 20 5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Border Margin="20 30 20 0">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Width="150" Content="输入或扫描" Margin="10 0 30 0" Background="White"/>
+                            <Button Width="150" Content="确认" Margin="30 0 30 0" Background="White"/>
+                            <Button Width="150" Content="删除" Margin="30 0 30 0" Background="White"/>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock Grid.Row="1" Text="物料，容器列表" Background="AliceBlue" Margin="20"/>
+                    <TextBlock Grid.Row="2" Text="物料，容器详细资料" Background="AliceBlue" Margin="20"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="入库" Padding="20 5 20 5">
+                <Border Margin="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="4.5*"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="1" Content="输入/扫描框" Background="White"/>
+                            <Button Grid.Column="3" Content="确认入库按钮" Background="White"/>
+                        </Grid>
+                        <Border Grid.Row="1" Margin="20" BorderBrush="Black" BorderThickness="1">
+                            <TextBlock Text="已扫描物料或容器列表Excel 格式，显示相关的资料" />
+                        </Border>
+                    </Grid>
+                </Border>
+            </TabItem>
+            <TabItem Header="出库" Padding="20 5 20 5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Border Margin="20 30 20 0">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Width="150" Content="可扫描或输入" Margin="110 0 30 0" Background="White"/>
+                            <Button Width="150" Content="确认出库按钮" Margin="30 0 30 0" Background="White"/>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock Grid.Row="1" Text="Excel 格式，显示库位和对应的相关容器或物料" Background="AliceBlue" Margin="20"/>
+                    <TextBlock Grid.Row="2" Text="Excel 格式，显示上表所选的容器或物料的资料" Background="AliceBlue" Margin="20"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="移库" Padding="20 5 20 5">
+
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>

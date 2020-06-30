@@ -10,7 +10,7 @@ namespace MvvmWpf.Models
 {
     public class DataUserDB : IDataUser
     {
-        public IUserInfoRepository _userInfoRepository = new UserInfoRepository();
+        public UserInfoRepository _userInfoRepository = new UserInfoRepository();
 
         public void Add(UserInfo userinfo)
         {
