@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   assembly="MvvmWpf.Domain"
+				   namespace="MvvmWpf.Domain.Entity">
+
+	<class name="Position" table="position">
+		<id name="id" column="id" >
+			<generator class="native" />
+		</id>
+		<property name="state" column="state" />
+		<property name="rackId" column="rack_id" />
+	<!--	<set name="materials">
+			<key column="position_id" />
+			<one-to-many class="MvvmWpf.Domain.Entity.Material"/>
+		</set>
+		<many-to-one name="rack" class="MvvmWpf.Domain.Entity.Rack" column="rack_id" /> -->
+	</class>
+</hibernate-mapping>

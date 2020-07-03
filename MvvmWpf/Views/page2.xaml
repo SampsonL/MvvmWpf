@@ -12,26 +12,57 @@
         <TabControl FontSize="20">
             <TabItem Header="仓库概况" Padding="20 5 20 5">
                 <Border Margin="30" BorderBrush="DarkCyan" BorderThickness="1">
-                    <TextBlock Text="已扫描物料或容器列表，Excel格式" />
+                    <DataGrid x:Name="dataGrid" Margin="10" ItemsSource="{Binding Materials}" FontSize="10" AutoGenerateColumns="True">
+                        <!--<DataGrid.Columns >
+                                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto">
 
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="UserName" Binding="{Binding UserName}" Width="auto">
+
+                                
+                            </DataGrid.Columns>-->
+                    </DataGrid>
                 </Border>
             </TabItem>
             <TabItem Header="查询" Padding="20 5 20 5">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="121*"/>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="90*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
-                    <Border Margin="20 30 20 0">
+                    <Border Margin="20,30,20,162.8" Grid.ColumnSpan="3" Grid.RowSpan="2">
                         <StackPanel Orientation="Horizontal">
                             <Button Width="150" Content="输入或扫描" Margin="10 0 30 0" Background="White"/>
                             <Button Width="150" Content="确认" Margin="30 0 30 0" Background="White"/>
                             <Button Width="150" Content="删除" Margin="30 0 30 0" Background="White"/>
                         </StackPanel>
                     </Border>
-                    <TextBlock Grid.Row="1" Text="物料，容器列表" Background="AliceBlue" Margin="20"/>
-                    <TextBlock Grid.Row="2" Text="物料，容器详细资料" Background="AliceBlue" Margin="20"/>
+                    <DataGrid Grid.Row="1" x:Name="dataGrid1" Margin="10,10.4,10,9.8" ItemsSource="{Binding Positions}" FontSize="10" AutoGenerateColumns="True" Grid.ColumnSpan="3">
+                        <!--<DataGrid.Columns >
+                                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto">
+
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="UserName" Binding="{Binding UserName}" Width="auto">
+
+                                
+                            </DataGrid.Columns>-->
+                    </DataGrid>
+                    <DataGrid x:Name="dataGrid2" Grid.Row="2" Margin="10,10.2" ItemsSource="{Binding Racks}" FontSize="10" AutoGenerateColumns="True" Grid.ColumnSpan="3">
+                        <!--<DataGrid.Columns >
+                                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto">
+
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="UserName" Binding="{Binding UserName}" Width="auto">
+
+                                
+                            </DataGrid.Columns>-->
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="入库" Padding="20 5 20 5">
@@ -71,7 +102,16 @@
                             <Button Width="150" Content="确认出库按钮" Margin="30 0 30 0" Background="White"/>
                         </StackPanel>
                     </Border>
-                    <TextBlock Grid.Row="1" Text="Excel 格式，显示库位和对应的相关容器或物料" Background="AliceBlue" Margin="20"/>
+                    <DataGrid x:Name="dataGrid3" Grid.Row="1" Margin="10" ItemsSource="{Binding TransferJobs}" FontSize="10" AutoGenerateColumns="True">
+                        <!--<DataGrid.Columns >
+                                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto">
+
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="UserName" Binding="{Binding UserName}" Width="auto">
+
+                                
+                            </DataGrid.Columns>-->
+                    </DataGrid>
                     <TextBlock Grid.Row="2" Text="Excel 格式，显示上表所选的容器或物料的资料" Background="AliceBlue" Margin="20"/>
                 </Grid>
             </TabItem>

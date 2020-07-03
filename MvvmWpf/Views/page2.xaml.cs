@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvvmWpf.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace MvvmWpf.Views
         public page2()
         {
             InitializeComponent();
+            this.DataContext = new Page2ViewModel();
         }
     }
 }

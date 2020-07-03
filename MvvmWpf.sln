@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmWpf", "MvvmWpf\MvvmWpf.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmWpf.Domain", "MvvmWpf.Domain\MvvmWpf.Domain.csproj", "{1A46B93E-E71E-4148-9AFF-D47A8C6AC92C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,14 +31,6 @@ Global
 		{1A46B93E-E71E-4148-9AFF-D47A8C6AC92C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A46B93E-E71E-4148-9AFF-D47A8C6AC92C}.Release|x64.ActiveCfg = Release|x64
 		{1A46B93E-E71E-4148-9AFF-D47A8C6AC92C}.Release|x64.Build.0 = Release|x64
-		{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}.Debug|x64.ActiveCfg = Debug|x64
-		{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}.Debug|x64.Build.0 = Debug|x64
-		{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}.Release|x64.ActiveCfg = Release|x64
-		{1DA75AC1-286F-4F15-AB4F-6B17AC8EED04}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

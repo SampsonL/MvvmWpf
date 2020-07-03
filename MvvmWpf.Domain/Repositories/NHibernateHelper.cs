@@ -21,7 +21,7 @@ namespace MvvmWpf.Domain.Repositories
                 {
                     var configuration = new Configuration();
                     configuration.Configure();
-                    configuration.AddAssembly(typeof(UserInfo).Assembly);
+               //     configuration.AddAssembly(typeof(Material).Assembly);
                     _sessionFactory = configuration.BuildSessionFactory();
                 }
                 return _sessionFactory;

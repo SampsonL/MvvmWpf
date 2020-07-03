@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   assembly="MvvmWpf.Domain"
+				   namespace="MvvmWpf.Domain.Entity">
+	<class name="Material" table="material">
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<property name="positionId" column="position_id" />
+	<!--	<many-to-one name="position" class="MvvmWpf.Domain.Entity.Position" column="position_id" /> -->
+		<!--	<bag name="transfer_Jobs">
+			<key column="materail_id" />
+			<one-to-many class="MvvmWpf.Domain.Entity.Transfer_Jobs"/>
+		</bag> -->
+	</class>
+</hibernate-mapping>

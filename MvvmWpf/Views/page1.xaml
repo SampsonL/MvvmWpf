@@ -70,24 +70,8 @@
                         <Button Content="" Grid.Column="5" Grid.Row="1" />
                     </Grid>
                     <!--3 Row-->
-                    <DataGrid x:Name="dataGrid1" Grid.Row="2" Margin="10" ItemsSource="{Binding}" FontSize="10" AutoGenerateColumns="False">
-                        <DataGrid.Columns >
-                            <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto">
-
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Header="UserName" Binding="{Binding UserName}" Width="auto">
-
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="auto">
-
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" Width="auto">
-
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="auto">
-
-                            </DataGridTextColumn>
-                        </DataGrid.Columns>
+                    <DataGrid x:Name="dataGrid1" Grid.Row="2" Margin="10" ItemsSource="{Binding Materials}" FontSize="10" AutoGenerateColumns="True">
+                       
                     </DataGrid>
                 </Grid>
             </TabItem>

@@ -17,25 +17,27 @@ namespace MvvmWpf.ViewModels
     class Page1ViewModel: NotificationObject
     {
 
-        DataUserDB dataUser = new DataUserDB();
+       
+        MaterialDB materialDB = new MaterialDB();
 
-        ICollection<UserInfo> _users = new ObservableCollection<UserInfo>();     
-        public ICollection<UserInfo> Users
+        ICollection<Material> _materials = new ObservableCollection<Material>();
+        public ICollection<Material> Materials
         {
-            get { return _users; }
+            get { return _materials; }
             set
             {
-                if (_users == value)
+                if (_materials == value)
                     return;
 
-                _users = value;
-                RaisePropertyChanged("Users");
+                _materials = value;
+                RaisePropertyChanged("Materials");
             }
         }
 
         public Page1ViewModel()
         {
-            Users = dataUser.GetAll();
+           
+            
             
 
 
