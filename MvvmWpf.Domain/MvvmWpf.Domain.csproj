@@ -110,6 +110,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Container.cs" />
     <Compile Include="Entity\IMaterialRepository.cs" />
     <Compile Include="Entity\Material.cs" />
     <Compile Include="Entity\Position.cs" />
@@ -126,6 +127,7 @@
     <Content Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Mappings\container.hbm.xml" />
     <EmbeddedResource Include="Mappings\material.hbm.xml" />
     <EmbeddedResource Include="Mappings\position.hbm.xml" />
     <EmbeddedResource Include="Mappings\rack.hbm.xml" />

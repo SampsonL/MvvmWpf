@@ -9,6 +9,7 @@
 		</id>
 		<property name="state" column="state" />
 		<property name="rackId" column="rack_id" />
+		<property name="name" />
 	<!--	<set name="materials">
 			<key column="position_id" />
 			<one-to-many class="MvvmWpf.Domain.Entity.Material"/>

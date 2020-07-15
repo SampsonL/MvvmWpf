@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MvvmWpf.ViewModels
 {
-    class NotificationObject : INotifyPropertyChanged
+    public class NotificationObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void RaisePropertyChanged(string propertyName)

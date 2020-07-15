@@ -11,25 +11,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MvvmWpf.Views
 {
     /// <summary>
-    /// page2.xaml 的交互逻辑
+    /// AddDataWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class page2 : Page
+    public partial class AddDataWindow : Window
     {
-        public page2()
+        public AddDataWindow()
         {
             InitializeComponent();
-            this.DataContext = new Page2ViewModel();
-        }
-
-        private void DataGrid_Selected(object sender, RoutedEventArgs e)
-        {
-
+            this.DataContext = new AddDataViewModel();
         }
     }
 }

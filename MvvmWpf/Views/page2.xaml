@@ -11,49 +11,50 @@
     <Grid>
         <TabControl FontSize="20">
             <TabItem Header="仓库概况" Padding="20 5 20 5">
-                <Border Margin="30" BorderBrush="DarkCyan" BorderThickness="1">
-                    <DataGrid x:Name="dataGrid" Margin="10" ItemsSource="{Binding Materials}" FontSize="10" AutoGenerateColumns="True">
-                        <!--<DataGrid.Columns >
-                                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-                                </DataGridTextColumn>
-                                <DataGridTextColumn Header="UserName" Binding="{Binding UserName}" Width="auto">
-
-                                
-                            </DataGrid.Columns>-->
+                    <DataGrid  Margin="10" ItemsSource="{Binding Positions}"  FontSize="10" AutoGenerateColumns="True">
                     </DataGrid>
-                </Border>
+                    <DataGrid Grid.Column="1" Margin="10" ItemsSource="{Binding ContainersByPositionId}" FontSize="10" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="PositionId" Binding="{Binding position_id}" />
+                            <DataGridTextColumn Header="ContainerId" Binding="{Binding id}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
             </TabItem>
             <TabItem Header="查询" Padding="20 5 20 5">
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="121*"/>
-                        <ColumnDefinition Width="11*"/>
-                        <ColumnDefinition Width="90*"/>
-                    </Grid.ColumnDefinitions>
+                    
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
+
                     <Border Margin="20,30,20,162.8" Grid.ColumnSpan="3" Grid.RowSpan="2">
                         <StackPanel Orientation="Horizontal">
-                            <Button Width="150" Content="输入或扫描" Margin="10 0 30 0" Background="White"/>
-                            <Button Width="150" Content="确认" Margin="30 0 30 0" Background="White"/>
+                            <TextBox Width="150" Text="{Binding InputId}" Margin="10 0 30 0" Background="White" VerticalAlignment="Center"/>
+                            <Button Width="150" Command="{Binding FindCommand}" Content="确认" Margin="30 0 30 0" Background="White"/>
                             <Button Width="150" Content="删除" Margin="30 0 30 0" Background="White"/>
                         </StackPanel>
                     </Border>
-                    <DataGrid Grid.Row="1" x:Name="dataGrid1" Margin="10,10.4,10,9.8" ItemsSource="{Binding Positions}" FontSize="10" AutoGenerateColumns="True" Grid.ColumnSpan="3">
-                        <!--<DataGrid.Columns >
-                                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto">
+                    <Grid Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <DataGrid  x:Name="dataGrid1" Margin="10,10.4,10,9.8" ItemsSource="{Binding ContainersById}" AutoGenerateColumns="True" FontSize="10" Grid.ColumnSpan="3">
+                               
+                            </DataGrid>
+                            <DataGrid Width="Auto" Margin="20 10 10 10" ItemsSource="{Binding MaterialsById}" AutoGenerateColumns="True" FontSize="10">
 
-                                </DataGridTextColumn>
-                                <DataGridTextColumn Header="UserName" Binding="{Binding UserName}" Width="auto">
-
-                                
-                            </DataGrid.Columns>-->
-                    </DataGrid>
-                    <DataGrid x:Name="dataGrid2" Grid.Row="2" Margin="10,10.2" ItemsSource="{Binding Racks}" FontSize="10" AutoGenerateColumns="True" Grid.ColumnSpan="3">
+                            </DataGrid>
+                        </StackPanel>
+                    </Grid>
+                    <DataGrid x:Name="dataGrid2" Grid.Row="2" Margin="10,10.2" ItemsSource="{Binding Racks}" FontSize="10" AutoGenerateColumns="True" >
                         <!--<DataGrid.Columns >
                                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto">
 
@@ -74,11 +75,11 @@
                         </Grid.RowDefinitions>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="58*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="58*" />
+                                <ColumnDefinition Width="115*" />
+                                <ColumnDefinition Width="58*" />
                             </Grid.ColumnDefinitions>
                             <Button Grid.Column="1" Content="输入/扫描框" Background="White"/>
                             <Button Grid.Column="3" Content="确认入库按钮" Background="White"/>

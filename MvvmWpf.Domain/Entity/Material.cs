@@ -10,7 +10,10 @@ namespace MvvmWpf.Domain.Entity
     {
         public virtual string id { set; get; }
         //    public virtual Position position { set; get; }
-        public virtual string positionId { get; set; }
+        //     public virtual string positionId { get; set; }
+        public virtual string product { get; set; }
+        public virtual string orderNo { get; set; }
+        public virtual string containerId { get; set; }
         //       public virtual ICollection<Transfer_Job> transfer_Jobs { set; get; }
     }
 }

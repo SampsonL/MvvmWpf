@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace MvvmWpf.Domain.Entity
 {
-    public class Position
+    public class Container
     {
-        public virtual string id { set; get; }
-        public virtual string state { set; get; }
-        public virtual string rackId { set; get; }
+        public virtual string id { get; set; }
+        public virtual string position_id { get; set; }
         public virtual string name { get; set; }
-        
     }
 }

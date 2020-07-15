@@ -1,0 +1,64 @@
+﻿<Window x:Class="MvvmWpf.Views.AddDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvmWpf.Views"
+        mc:Ignorable="d"
+        Title="AddDataWindow" Height="450" Width="450"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Content="srcposition_id:" Grid.Row="0" Grid.Column="0" FontSize="15" VerticalAlignment="Center"/>
+            <Label Content="destposition_id:" Grid.Row="1" Grid.Column="0" FontSize="15" VerticalAlignment="Center"/>
+            <Label Content="transfer_job_type:" Grid.Row="2" Grid.Column="0" FontSize="15" VerticalAlignment="Center"/>
+            <Label Content="transfer_job_actor:" Grid.Row="3" Grid.Column="0" FontSize="15" VerticalAlignment="Center"/>
+            <Label Content="containerId:" Grid.Row="5" Grid.Column="0" FontSize="15" VerticalAlignment="Center" />
+
+            
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SrcPositionId}" VerticalAlignment="Center" />
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding DestPositionId}" VerticalAlignment="Center" />
+            <ComboBox Text="{Binding TransferJobType}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+                <ComboBoxItem Content="get_material_from_stocker" Background="White"/>
+                <ComboBoxItem Content="put_material_in_stocker" Background="White"/>
+            </ComboBox>
+            <ComboBox Text="{Binding TransferJobActor}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
+                <ComboBoxItem Content="software" Background="White" />
+                <ComboBoxItem Content="hardware" Background="White" />
+            </ComboBox>
+
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ContainerId}" VerticalAlignment="Center" />
+            
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Content="确认添加" Command="{Binding AddDataCommand}" Grid.Column="0" Margin="10"/>
+            <Button Content="取消" Command="{Binding CancerCommand}" Grid.Column="1" Margin="10"/>
+        </Grid>
+        
+    </Grid>
+</Window>

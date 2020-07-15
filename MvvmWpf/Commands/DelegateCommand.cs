@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace MvvmWpf.Commands
 {
-    class DelegateCommand:ICommand
+    public class DelegateCommand:ICommand
     {
         public bool CanExecute(object parameter)
         {

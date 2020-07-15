@@ -5,13 +5,13 @@
 	
 	<class name="Transfer_Job" table="transfer_job">
 		<id name="id" column="id" >
-			<generator class="native" />
+			<generator class="assigned" />
 		</id>
 		<property name="src_position_id" />
 		<property name="dest_position_id" />
 		<property name="transfer_job_type" />
 		<property name="transfer_job_actor" />
-		<property name="materialId" column="material_id" />
+		<property name="containerId" column="container_id" />
 	<!--	<many-to-one name="material" class="Material" column="material_id" /> -->
 	</class>
 </hibernate-mapping>

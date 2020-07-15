@@ -2,14 +2,13 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
 				   assembly="MvvmWpf.Domain"
 				   namespace="MvvmWpf.Domain.Entity">
-	<class name="Material" table="material">
+	<class name="Container" table="container">
 		<id name="id" column="id">
 			<generator class="native" />
 		</id>
-		<property name="product"/>
-		<property name="orderNo" />
-		<property name="containerId" />
-	<!--	<many-to-one name="position" class="MvvmWpf.Domain.Entity.Position" column="position_id" /> -->
+		<property name="position_id" />
+		<property name="name" />
+		<!--	<many-to-one name="position" class="MvvmWpf.Domain.Entity.Position" column="position_id" /> -->
 		<!--	<bag name="transfer_Jobs">
 			<key column="materail_id" />
 			<one-to-many class="MvvmWpf.Domain.Entity.Transfer_Jobs"/>
