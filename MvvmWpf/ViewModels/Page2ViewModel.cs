@@ -136,6 +136,21 @@ namespace MvvmWpf.ViewModels
             }
         }
 
+        //DataGrid选中行属性
+        private Container _selectItemData= new Container();
+        public Container SelectItemData
+        {
+            get { return _selectItemData; }
+            set
+            {
+                if (_selectItemData == value)
+                    return;
+
+                _selectItemData = value;
+                RaisePropertyChanged("SelectItemData");
+            }
+        }
+
 
 
         //命令属性
@@ -157,6 +172,12 @@ namespace MvvmWpf.ViewModels
             this.FindCommand.ExecuteAction = new Action<object>(FindByid);
 
             //选中行事件
+            string id= SelectItemData.id;
+            
+            if (id != null)
+            {
+                MaterialsById = materialDB.GetByid<Material>(id);
+            }
             
 
         }
@@ -164,7 +185,8 @@ namespace MvvmWpf.ViewModels
         private void FindByid(object obj)
         {
             string id = InputId;
-            if (id == null)
+            
+            if (id == null || (id == ""))
             {
                 ContainersById = materialDB.GetAll<Container>();
                 MaterialsById = materialDB.GetAll<Material>();
@@ -172,6 +194,7 @@ namespace MvvmWpf.ViewModels
             else
             {
                 //    MaterialsById = materialDB.GetById<Material>(id);
+                //当输入值不为空时，查询第一张表container,如果查询到的数据不为空，往下执行
                 if (materialDB.GetById<Container>(id) != null)
                 {
                     ContainersById = materialDB.GetById<Container>(id);
@@ -180,6 +203,7 @@ namespace MvvmWpf.ViewModels
                     var containerId = container.id;
                     MaterialsById = materialDB.GetByid<Material>(containerId);
                 }
+                //如果在container表中查询不到数据，就在第二张表material中查询
                 else
                 {
                     MaterialsById = materialDB.GetByMaterialId<Material>(id);

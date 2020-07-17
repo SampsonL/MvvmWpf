@@ -1,7 +1,6 @@
 ﻿using MvvmWpf.Commands;
 using MvvmWpf.Domain.Entity;
 using MvvmWpf.Models;
-using NHibernate.Linq.Visitors.ResultOperatorProcessors;
 using System;
 using System.Collections.Generic;
 using System.Linq;

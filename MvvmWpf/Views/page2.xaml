@@ -17,7 +17,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid  Margin="10" ItemsSource="{Binding Positions}"  FontSize="10" AutoGenerateColumns="True">
+                    <DataGrid x:Name="dataGrid" Margin="10" ItemsSource="{Binding Positions}" SelectedItem="{Binding SelectItemData}"  FontSize="10" AutoGenerateColumns="True">
                     </DataGrid>
                     <DataGrid Grid.Column="1" Margin="10" ItemsSource="{Binding ContainersByPositionId}" FontSize="10" AutoGenerateColumns="False">
                         <DataGrid.Columns>
